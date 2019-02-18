@@ -3,7 +3,7 @@
 # Scrapy settings for DgSpider project
 
 # 图片储存
-IMAGES_STORE = 'D:\\pics\\jfss\\'
+IMAGES_STORE = './pics/jfss/'
 
 # 爬取域名
 DOMAIN = 'nrsfh.com'
@@ -27,6 +27,6 @@ CREATE_POST_USER = '37619,18441390,18441391,18441392,18441393,18441394,18441395,
 SPIDER_NAME = 'DgContentSpider'
 
 # 文章URL爬取规则XPATH
-POST_TITLE_XPATH = '//div[@class="title"]'
-POST_CONTENT_XPATH = '//div[@class="bodycss"]'
+POST_TITLE_XPATH = '//div[@class="articleT"]/h1/strong'
+POST_CONTENT_XPATH = '//div[@class="articleB"]'
 

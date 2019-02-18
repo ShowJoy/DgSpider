@@ -4,9 +4,9 @@ import os
 
 
 def dbhandle_online():
-    host = '192.168.1.235'
+    host = '127.0.0.1'
     user = 'root'
-    passwd = 'douguo2015'
+    passwd = 'ShowJoy522%@@'
     charset = 'utf8'
     conn = pymysql.connect(
         host=host,
@@ -19,9 +19,9 @@ def dbhandle_online():
 
 
 def dbhandle_local():
-    host = '192.168.1.235'
+    host = '127.0.0.1'
     user = 'root'
-    passwd = 'douguo2015'
+    passwd = 'ShowJoy522%@@'
     charset = 'utf8'
     conn = pymysql.connect(
         host=host,
@@ -35,9 +35,9 @@ def dbhandle_local():
 
 
 def dbhandle_geturl(gid):
-    host = '192.168.1.235'
+    host = '127.0.0.1'
     user = 'root'
-    passwd = 'douguo2015'
+    passwd = 'ShowJoy522%@@'
     charset = 'utf8'
     conn = pymysql.connect(
         host=host,
@@ -47,7 +47,7 @@ def dbhandle_geturl(gid):
         use_unicode=False
     )
     cursor = conn.cursor()
-    sql = 'select url,spider_name,site,gid,module from dg_spider.dg_spider_post where status=0 and gid=%s limit 1' % gid
+    sql = 'select url,spider_name,site,gid,module from scrapy.dg_spider_post where status=0 and gid=%s limit 1' % gid
     try:
         cursor.execute(sql)
         result = cursor.fetchone()
@@ -69,9 +69,9 @@ def dbhandle_geturl(gid):
 
 
 def dbhandle_insert_content(url, title, content, user_id, has_img):
-    host = '192.168.1.235'
+    host = '127.0.0.1'
     user = 'root'
-    passwd = 'douguo2015'
+    passwd = 'ShowJoy522%@@'
     charset = 'utf8'
     conn = pymysql.connect(
         host=host,
@@ -84,7 +84,7 @@ def dbhandle_insert_content(url, title, content, user_id, has_img):
 
     # 如果标题或者内容为空，那么程序将退出，篇文章将会作废并将status设置为1，爬虫继续向下运行获得新的URl
     if content.strip() == '' or title.strip() == '':
-        sql_fail = 'update dg_spider.dg_spider_post set status="%s" where url="%s" ' % ('1', url)
+        sql_fail = 'update scrapy.dg_spider_post set status="%s" where url="%s" ' % ('1', url)
         try:
             cur.execute(sql_fail)
             result = cur.fetchone()
@@ -94,7 +94,7 @@ def dbhandle_insert_content(url, title, content, user_id, has_img):
             conn.rollback()
         os._exit(0)
 
-    sql = 'update dg_spider.dg_spider_post set title="%s",content="%s",user_id="%s",has_img="%s" where url="%s" ' \
+    sql = 'update scrapy.dg_spider_post set title="%s",content="%s",user_id="%s",has_img="%s" where url="%s" ' \
           % (title, content, user_id, has_img, url)
 
     try:
@@ -108,9 +108,9 @@ def dbhandle_insert_content(url, title, content, user_id, has_img):
 
 
 def dbhandle_update_status(url, status):
-    host = '192.168.1.235'
+    host = '127.0.0.1'
     user = 'root'
-    passwd = 'douguo2015'
+    passwd = 'ShowJoy522%@@'
     charset = 'utf8'
     conn = pymysql.connect(
         host=host,
@@ -120,7 +120,7 @@ def dbhandle_update_status(url, status):
         use_unicode=False
     )
     cur = conn.cursor()
-    sql = 'update dg_spider.dg_spider_post set status="%s" where url="%s" ' \
+    sql = 'update scrapy.dg_spider_post set status="%s" where url="%s" ' \
           % (status, url)
     try:
         cur.execute(sql)
@@ -133,9 +133,9 @@ def dbhandle_update_status(url, status):
 
 
 def dbhandle_get_content(url):
-    host = '192.168.1.235'
+    host = '127.0.0.1'
     user = 'root'
-    passwd = 'douguo2015'
+    passwd = 'ShowJoy522%@@'
     charset = 'utf8'
     conn = pymysql.connect(
         host=host,
@@ -145,7 +145,7 @@ def dbhandle_get_content(url):
         use_unicode=False
     )
     cursor = conn.cursor()
-    sql = 'select title,content,user_id,gid from dg_spider.dg_spider_post where status=1 and url="%s" limit 1' % url
+    sql = 'select title,content,user_id,gid from scrapy.dg_spider_post where status=1 and url="%s" limit 1' % url
     try:
         cursor.execute(sql)
         result = cursor.fetchone()
@@ -167,9 +167,9 @@ def dbhandle_get_content(url):
 
 # 获取爬虫初始化参数
 def dbhandle_get_spider_param(url):
-    host = '192.168.1.235'
+    host = '127.0.0.1'
     user = 'root'
-    passwd = 'douguo2015'
+    passwd = 'ShowJoy522%@@'
     charset = 'utf8'
     conn = pymysql.connect(
         host=host,
@@ -179,7 +179,7 @@ def dbhandle_get_spider_param(url):
         use_unicode=False
     )
     cursor = conn.cursor()
-    sql = 'select title,content,user_id,gid from dg_spider.dg_spider_post where status=0 and url="%s" limit 1' % url
+    sql = 'select title,content,user_id,gid from scrapy.dg_spider_post where status=0 and url="%s" limit 1' % url
     result = ''
     try:
         cursor.execute(sql)

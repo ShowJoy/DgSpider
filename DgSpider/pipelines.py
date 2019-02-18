@@ -150,8 +150,8 @@ class DgPipeline(object):
                 gid = urlSettings.GROUP_ID
                 module = urlSettings.MODULE
                 status = '0'
-                sql_search = 'select md5_url from dg_spider.dg_spider_post where md5_url="%s"' % linkmd5id
-                sql = 'insert into dg_spider.dg_spider_post(md5_url, url, spider_name, site, gid, module, status) ' \
+                sql_search = 'select md5_url from scrapy.dg_spider_post where md5_url="%s"' % linkmd5id
+                sql = 'insert into scrapy.dg_spider_post(md5_url, url, spider_name, site, gid, module, status) ' \
                       'values("%s", "%s", "%s", "%s", "%s", "%s", "%s")' \
                       % (linkmd5id, url, spider_name, site, gid, module, status)
                         
