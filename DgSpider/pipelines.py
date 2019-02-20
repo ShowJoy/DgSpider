@@ -9,6 +9,7 @@
 # @date 2017/04/13
 
 import re
+import os
 import urllib.request
 from DgSpider import urlSettings
 from DgSpider import contentSettings
@@ -108,7 +109,10 @@ class DgPipeline(object):
                 file_name = list_name[len(list_name)-1]
 
                 # 获取图片本地存储路径
-                file_path = contentSettings.IMAGES_STORE + file_name
+                file_path = os.path.join(contentSettings.IMAGES_STORE, file_name)
+                
+                if not os.path.exists(contentSettings.IMAGES_STORE):
+                    os.mkdir(contentSettings.IMAGES_STORE)
                 
                 # 获取图片并上传至本地
                 urllib.request.urlretrieve(imgUrl, file_path)

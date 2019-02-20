@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # 图片储存
-IMAGES_STORE = './pics/pregnantMonther/'
+IMAGES_STORE = 'pics/pregnantMonther'
 
 # 图片域名前缀
 DOMAIN = "http:"

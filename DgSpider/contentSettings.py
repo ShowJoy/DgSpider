@@ -3,7 +3,7 @@
 # Scrapy settings for DgSpider project
 
 # 图片储存
-IMAGES_STORE = './pics/jfss/'
+IMAGES_STORE = 'pics/jfss'
 
 # 爬取域名
 DOMAIN = 'nrsfh.com'
