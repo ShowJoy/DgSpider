@@ -6,7 +6,7 @@ import os
 def dbhandle_online():
     host = '127.0.0.1'
     user = 'root'
-    passwd = 'ShowJoy522%@@'
+    passwd = 'lala'
     charset = 'utf8'
     conn = pymysql.connect(
         host=host,
@@ -21,7 +21,7 @@ def dbhandle_online():
 def dbhandle_local():
     host = '127.0.0.1'
     user = 'root'
-    passwd = 'ShowJoy522%@@'
+    passwd = 'lala'
     charset = 'utf8'
     conn = pymysql.connect(
         host=host,
@@ -37,7 +37,7 @@ def dbhandle_local():
 def dbhandle_geturl(gid):
     host = '127.0.0.1'
     user = 'root'
-    passwd = 'ShowJoy522%@@'
+    passwd = 'lala'
     charset = 'utf8'
     conn = pymysql.connect(
         host=host,
@@ -71,7 +71,7 @@ def dbhandle_geturl(gid):
 def dbhandle_insert_content(url, title, content, user_id, has_img):
     host = '127.0.0.1'
     user = 'root'
-    passwd = 'ShowJoy522%@@'
+    passwd = 'lala'
     charset = 'utf8'
     conn = pymysql.connect(
         host=host,
@@ -110,7 +110,7 @@ def dbhandle_insert_content(url, title, content, user_id, has_img):
 def dbhandle_update_status(url, status):
     host = '127.0.0.1'
     user = 'root'
-    passwd = 'ShowJoy522%@@'
+    passwd = 'lala'
     charset = 'utf8'
     conn = pymysql.connect(
         host=host,
@@ -135,7 +135,7 @@ def dbhandle_update_status(url, status):
 def dbhandle_get_content(url):
     host = '127.0.0.1'
     user = 'root'
-    passwd = 'ShowJoy522%@@'
+    passwd = 'lala'
     charset = 'utf8'
     conn = pymysql.connect(
         host=host,
@@ -169,7 +169,7 @@ def dbhandle_get_content(url):
 def dbhandle_get_spider_param(url):
     host = '127.0.0.1'
     user = 'root'
-    passwd = 'ShowJoy522%@@'
+    passwd = 'lala'
     charset = 'utf8'
     conn = pymysql.connect(
         host=host,
